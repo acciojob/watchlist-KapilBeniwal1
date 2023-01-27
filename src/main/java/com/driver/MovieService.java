@@ -11,47 +11,43 @@ public class MovieService {
     @Autowired
     MovieRepository movieRepository;
     String addmovie(Movie movie){
-        String res=movieRepository.addMovie(movie);
-        return res;
+        return movieRepository.addMovie(movie);
+
     }
+
     String adddirector(Director director){
-        String res=movieRepository.addDirector(director);
-        return res;
+        return movieRepository.addDirector(director);
     }
+
     Movie getmoviebyname(String name){
-        Movie obg=movieRepository.getmovie(name);
-        return obg;
+        return movieRepository.getmovie(name);
     }
+
     Director getdirectorbyname(String name){
-        Director obj=movieRepository.getdirecor(name);
-        return obj;
+        return movieRepository.getdirecor(name);
     }
+
     String addmoviedirectorPair(String mvName, String dirName){
-        String res=movieRepository.addpair(mvName,dirName);
-        return res;
+        return movieRepository.addpair(mvName,dirName);
     }
 
     List getallmovies(){
-        List st=   movieRepository.getAllMovies();
-        return st;
+        return movieRepository.getAllMovies();
     }
 
     String deleteDirectorByName(String dirName){
-        String res=movieRepository.deleteDirectorByName(dirName);
-        return res;
+        return movieRepository.deleteDirectorByName(dirName);
     }
+
     String deleteAllDirectors(){
-        String res=movieRepository.deleteAllDirectors();
-        return res;
+        return movieRepository.deleteAllDirectors();
     }
 
     List getMoviesByDirectorName(String dirName){
-        List movieNames=movieRepository.getMoviesByDirectorName(dirName);
-        return movieNames;
-    }
-    String getDirectorByMovieName(String mvName){
-        String diName=movieRepository.getDirectorByMovieName(mvName);
-        return diName;
+        return movieRepository.getMoviesByDirectorName(dirName);
     }
 
+    String getDirectorByMovieName(String mvName){
+        return movieRepository.getDirectorByMovieName(mvName);
+    }
 }

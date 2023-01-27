@@ -10,11 +10,13 @@ import java.util.List;
 public class MovieController {
     @Autowired
     MovieService movieService;
+
     @PostMapping("/movies/add-movie")
     public ResponseEntity<String> addMovie(@RequestBody() Movie movie){
         String res=movieService.addmovie(movie);
         return new ResponseEntity<>(res, HttpStatus.OK);
     }
+
     @PostMapping("/movies/add-director")
     public  ResponseEntity<String> addDirector(@RequestBody() Director director){
         String res=movieService.adddirector(director);
